@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>サービス｜Alter World Models合同会社</title>
+<meta name="description" content="システム思考プラットフォーム、コンサルティング、トレーニング／セミナーの3つのサービスをご紹介します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sky-100:#F6FBFD; --sky-200:#E4F2FA;
+    --header-top:#8AC9ED; --header-bottom:#E4F2FA;
+    --surface-top:#CDE9F8; --surface-mid:#7FC3E8; --surface-deep:#2C86BE;
+    --deep-900:#081F38; --deep-800:#0B2E52;
+    --navy:#0B2E52; --blue:#1C6FA8; --blue-light:#3B93C9;
+    --ice-200:#CFE8F7; --text:#16324A;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{ font-family:"Noto Sans JP", sans-serif; color:var(--text); line-height:1.8; -webkit-font-smoothing:antialiased;}
+  .eyebrow{ font-family:"Inter", sans-serif; font-size:.72rem; letter-spacing:.14em; font-weight:600; color:var(--blue); text-transform:uppercase;}
+  h1,h2,h3{ font-family:"Zen Kaku Gothic New", "Noto Sans JP", sans-serif; color:var(--navy); line-height:1.4;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 24px;}
+
+  header.site-header{
+    position:sticky; top:0; z-index:50;
+    background:linear-gradient(180deg, var(--header-top), var(--header-bottom));
+    border-bottom:1px solid var(--ice-200);
+  }
+  .header-inner{ display:flex; align-items:center; justify-content:space-between; padding:16px 24px; max-width:1080px; margin:0 auto;}
+  .logo{ font-family:"Zen Kaku Gothic New", sans-serif; font-weight:700; font-size:1.05rem; color:var(--navy);}
+  .logo span{color:var(--blue);}
+  nav.main-nav ul{display:flex; gap:30px; list-style:none;}
+  nav.main-nav a{ font-size:.92rem; font-weight:500; color:var(--text); padding:6px 2px; border-bottom:2px solid transparent; transition:border-color .2s, color .2s;}
+  nav.main-nav a.current, nav.main-nav a:hover{color:var(--blue); border-color:var(--blue);}
+  .nav-right{display:flex; align-items:center; gap:20px;}
+  .lang-toggle{ font-family:"Inter", sans-serif; font-size:.78rem; font-weight:600; color:var(--blue); display:flex; gap:6px; align-items:center;}
+  .lang-toggle .off{color:#9db6c8; cursor:default;}
+
+  .breadcrumb{background:var(--sky-100); border-bottom:1px solid var(--ice-200);}
+  .breadcrumb .wrap{ padding:12px 24px; font-size:.8rem; font-family:"Inter",sans-serif; display:flex; align-items:center; gap:8px; color:var(--text); opacity:.75;}
+  .breadcrumb a{color:var(--blue); font-weight:600;}
+  .breadcrumb .sep{opacity:.5;}
+
+  main.ocean{
+    background:linear-gradient(180deg, var(--surface-top) 0%, var(--surface-mid) 55%, var(--surface-deep) 100%);
+  }
+
+  .page-hero{padding:56px 24px 40px; text-align:center;}
+  .page-hero .eyebrow{display:block; margin-bottom:14px; color:var(--deep-800);}
+  .page-hero h1{font-size:clamp(1.6rem,3.4vw,2.2rem); font-weight:900; margin-bottom:14px; color:var(--deep-900);}
+  .page-hero p{max-width:560px; margin:0 auto; color:var(--deep-800); opacity:.85; font-size:.96rem;}
+
+  section.service-block{padding:20px 24px 44px;}
+  .service-block .wrap{
+    background:#fff; border-radius:6px; padding:32px;
+    display:grid; grid-template-columns:.7fr 1.3fr; gap:40px; align-items:start;
+    box-shadow:0 10px 30px rgba(8,31,56,.12);
+  }
+  .service-block .num{ font-family:"Inter",sans-serif; font-weight:700; font-size:.78rem; color:var(--blue-light); letter-spacing:.08em;}
+  .service-block h2{font-size:1.35rem; margin-top:10px;}
+  .service-block .desc p{font-size:.92rem; opacity:.85; margin-bottom:14px;}
+  .service-block ul{list-style:none; margin-top:10px;}
+  .service-block li{ font-size:.88rem; padding:8px 0; border-bottom:1px solid var(--ice-200); display:flex; gap:10px;}
+  .service-block li::before{content:"—"; color:var(--blue-light);}
+  section.service-block:last-of-type{padding-bottom:80px;}
+
+  footer{background:linear-gradient(180deg, var(--deep-800), var(--deep-900)); color:#eaf2f9; padding:56px 24px 28px;}
+  .footer-grid{
+    max-width:1080px; margin:0 auto; display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:32px;
+    padding-bottom:32px; border-bottom:1px solid rgba(255,255,255,.14);
+  }
+  .footer-brand .logo{color:#fff; margin-bottom:10px;}
+  .footer-brand .logo span{color:var(--blue-light);}
+  .footer-brand p{font-size:.82rem; opacity:.65; max-width:240px;}
+  .footer-col h4{ font-family:"Inter",sans-serif; font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; opacity:.55; margin-bottom:14px; font-weight:600;}
+  .footer-col ul{list-style:none;}
+  .footer-col li{margin-bottom:9px;}
+  .footer-col a{font-size:.86rem; opacity:.85;}
+  .footer-col a:hover{opacity:1; text-decoration:underline;}
+  .footer-bottom{
+    max-width:1080px; margin:0 auto; padding-top:20px;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+    font-size:.76rem; opacity:.55;
+  }
+
+  #toTop{
+    position:fixed; right:22px; bottom:22px; width:44px; height:44px; border-radius:50%;
+    background:var(--deep-900); color:#fff; display:flex; align-items:center; justify-content:center;
+    opacity:0; pointer-events:none; transition:opacity .25s, transform .2s;
+    font-size:1.1rem; z-index:60; box-shadow:0 4px 14px rgba(8,31,56,.3);
+  }
+  #toTop.show{opacity:1; pointer-events:auto;}
+  #toTop:hover{transform:translateY(-3px);}
+
+  @media (max-width:760px){
+    nav.main-nav{display:none;}
+    .service-block .wrap{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;}
+  }
+
+
+  /* footer menu restructure */
+  .footer-menu{list-style:none;}
+  .footer-menu > li{margin-bottom:16px;}
+  .footer-menu .cat, .footer-menu > li > a.toplevel{
+    font-size:1rem; font-weight:700; color:#fff; opacity:.95;
+    font-family:"Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+  }
+  .footer-menu > li > a.toplevel{display:inline-block;}
+  .footer-menu > li > a.toplevel:hover{opacity:1; text-decoration:underline;}
+  .footer-menu .sub{list-style:none; margin-top:9px; padding-left:2px;}
+  .footer-menu .sub li{margin-bottom:8px;}
+  .footer-menu .sub a{font-size:.82rem; opacity:.72; font-weight:400;}
+  .footer-menu .sub a:hover{opacity:1; text-decoration:underline;}
+
+  .footer-legal{display:flex; gap:18px;}
+  .footer-legal a{font-size:.72rem; opacity:.5;}
+  .footer-legal a:hover{opacity:.8; text-decoration:underline;}
+
+  /* blog note link */
+  .blog-card.linked{transition:transform .15s, box-shadow .15s; cursor:pointer;}
+  .blog-card.linked:hover{transform:translateY(-2px); box-shadow:0 14px 34px rgba(8,31,56,.18);}
+  .blog-card .go.arrow{color:var(--blue); font-weight:600;}
+
+  .ext-arrow{display:inline-block; margin-left:5px; vertical-align:1px; opacity:.85;}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo">Alter World Models<span>合同会社</span></div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">トップ</a></li>
+        <li><a href="service.html" class="current">サービス</a></li>
+        <li><a href="https://note.com/YOUR_NOTE_ID" target="_blank" rel="noopener">ブログ<svg class="ext-arrow" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 8L8 2M8 2H3M8 2V7" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+        <li><a href="company.html">会社情報</a></li>
+        <li><a href="contact.html">お問い合わせ</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <div class="lang-toggle"><a href="#">JA</a><span class="off">/ EN</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="breadcrumb">
+  <div class="wrap">
+    <a href="index.html">TOP</a>
+    <span class="sep">&gt;</span>
+    <span>サービス</span>
+  </div>
+</div>
+
+<main class="ocean">
+  <section class="page-hero">
+    <span class="eyebrow">Service</span>
+    <h1>3つのサービスで、複雑な問題への向き合い方を変える</h1>
+    <p>「システム思考」をベースとした共通認識・評価プラットフォームの提供と、それに伴うコンサルティング、トレーニング／セミナーを行っています。</p>
+  </section>
+
+  <section class="service-block" id="platform">
+    <div class="wrap">
+      <div><span class="num">01 — PLATFORM</span></div>
+      <div class="desc">
+        <h2>システム思考プラットフォーム</h2>
+        <p>Vensimベースのシミュレーション環境で、要素間の関係をモデル化します。関係者間の共通認識づくりから、シナリオ別のシステム全体挙動の評価まで一貫して支援します。</p>
+        <ul>
+          <li>「システム思考」モデリング・アプリケーション</li>
+          <li>モデルのシミュレーション・シナリオ比較</li>
+          <li>専門家ネットワークによる知見の補強</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-block" id="consulting">
+    <div class="wrap">
+      <div><span class="num">02 — CONSULTING</span></div>
+      <div class="desc">
+        <h2>コンサルティング</h2>
+        <p>経営層・政策立案担当者を対象に、外部要因を踏まえた戦略・事業計画の立案を、システム全体の定量的な評価に基づいて支援します。</p>
+        <ul>
+          <li>リスク評価・対策立案</li>
+          <li>施策のインパクト評価</li>
+          <li>継続的な変化のモニタリング</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-block" id="training">
+    <div class="wrap">
+      <div><span class="num">03 — TRAINING</span></div>
+      <div class="desc">
+        <h2>トレーニング／セミナー</h2>
+        <p>「システム思考」の考え方と実践手法を、企業・組織向けの研修として提供します。関係者が共通のモデルをもとに議論できる状態をつくります。</p>
+        <ul>
+          <li>システム思考の基礎トレーニング</li>
+          <li>組織内でのモデリング実践支援</li>
+          <li>セミナー・講演</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">Alter World Models<span>合同会社</span></div>
+      <p>「システム思考」をベースとした共通認識・評価プラットフォームの提供と、それに伴うコンサルティング・トレーニングを行います。</p>
+    </div>
+    <ul class="footer-menu">
+      <li>
+        <span class="cat">サービス</span>
+        <ul class="sub">
+          <li><a href="service.html#platform">プラットフォーム</a></li>
+          <li><a href="service.html#consulting">コンサルティング</a></li>
+          <li><a href="service.html#training">トレーニング／セミナー</a></li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="footer-menu">
+      <li><a class="toplevel" href="https://note.com/YOUR_NOTE_ID" target="_blank" rel="noopener">ブログ<svg class="ext-arrow" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 8L8 2M8 2H3M8 2V7" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+      <li><a class="toplevel" href="company.html#overview">会社概要</a></li>
+      <li><a class="toplevel" href="contact.html">お問い合わせ</a></li>
+    </ul>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Alter World Models合同会社　Tokyo, Japan</span>
+    <div class="footer-legal">
+      <a href="#">プライバシーポリシー</a>
+      <a href="#">個人情報保護方針</a>
+    </div>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="ページトップへ戻る">↑</button>
+
+<script>
+  const toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', () => {
+    toTop.classList.toggle('show', window.scrollY > 400);
+  });
+  toTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+</script>
+</body>
+</html>
