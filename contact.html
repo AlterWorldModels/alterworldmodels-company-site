@@ -160,13 +160,18 @@
   .form-row{margin-bottom:20px;}
   .form-row label{display:block; font-size:.85rem; font-weight:600; color:var(--navy); margin-bottom:6px;}
   .form-row .req{color:var(--blue-light); font-size:.72rem; margin-left:4px;}
-  .form-row input, .form-row textarea{
+  .form-row input, .form-row textarea, .form-row select{
     width:100%; border:1px solid var(--ice-200); border-radius:4px; padding:11px 13px;
     font-family:"Noto Sans JP", sans-serif; font-size:.92rem; color:var(--text);
     background:var(--sky-100);
   }
-  .form-row input:focus, .form-row textarea:focus{outline:2px solid var(--blue-light); outline-offset:1px;}
+  .form-row select{appearance:auto;}
+  .form-row input:focus, .form-row textarea:focus, .form-row select:focus{outline:2px solid var(--blue-light); outline-offset:1px;}
   .form-row textarea{min-height:140px; resize:vertical;}
+  .form-row-split{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  .form-check{display:flex; align-items:flex-start; gap:10px; margin-bottom:16px; font-size:.82rem; opacity:.85; line-height:1.6;}
+  .form-check input{width:auto; margin-top:3px; flex-shrink:0;}
+  .link-underline{color:var(--blue); text-decoration:underline;}
   .form-submit{
     background:var(--deep-900); color:#fff; border:none; border-radius:3px;
     padding:13px 30px; font-size:.92rem; font-weight:500; cursor:pointer;
@@ -174,6 +179,10 @@
   }
   .form-submit:hover{opacity:.88;}
   .form-note{font-size:.78rem; opacity:.6; margin-top:16px;}
+
+  @media (max-width:600px){
+    .form-row-split{grid-template-columns:1fr;}
+  }
 
 
   /* footer menu restructure */
@@ -234,29 +243,76 @@
   <section class="page-hero">
     <span class="eyebrow">Contact</span>
     <h1>お問い合わせ</h1>
-    <p>サービスに関するご相談、取材のご依頼などは、以下のフォームよりお気軽にご連絡ください。</p>
+    <p>必要事項をご記入の上「送信する」を押してください。<br>
+    お問い合わせ内容によって、回答にお時間を要したり、回答しかねたりすることがあります。<br>
+    また、セールス・勧誘などはお断りいたします。<br>
+    あらかじめ、ご了承ください。</p>
   </section>
 
   <div class="contact-wrap">
-    <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <div class="form-row">
-        <label for="name">お名前<span class="req">必須</span></label>
-        <input type="text" id="name" name="name" required>
+    <form class="contact-form" action="https://formspree.io/f/mljewwpw" method="POST">
+      <div class="form-row form-row-split">
+        <div>
+          <label for="last_name">姓<span class="req">必須</span></label>
+          <input type="text" id="last_name" name="last_name" placeholder="例）山田" required>
+        </div>
+        <div>
+          <label for="first_name">名<span class="req">必須</span></label>
+          <input type="text" id="first_name" name="first_name" placeholder="例）太郎" required>
+        </div>
       </div>
       <div class="form-row">
-        <label for="company">会社名・組織名</label>
-        <input type="text" id="company" name="company">
+        <label for="company">企業名<span class="req">必須</span></label>
+        <input type="text" id="company" name="company" placeholder="例）Alter World Models合同会社" required>
+      </div>
+      <div class="form-row">
+        <label for="department">部署</label>
+        <input type="text" id="department" name="department" placeholder="例）営業部">
+      </div>
+      <div class="form-row">
+        <label for="position">役職</label>
+        <input type="text" id="position" name="position" placeholder="例）部長">
       </div>
       <div class="form-row">
         <label for="email">メールアドレス<span class="req">必須</span></label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" placeholder="例）xxxx@alterworldmodels.com" required>
+      </div>
+      <div class="form-row">
+        <label for="tel">電話番号<span class="req">必須</span></label>
+        <input type="tel" id="tel" name="tel" placeholder="例）0312345678" required>
+      </div>
+      <div class="form-row">
+        <label for="category">お問い合わせカテゴリ<span class="req">必須</span></label>
+        <select id="category" name="category" required>
+          <option value="" selected disabled>選択してください</option>
+          <option value="プラットフォーム">プラットフォーム</option>
+          <option value="コンサルティング">コンサルティング</option>
+          <option value="トレーニング">トレーニング</option>
+          <option value="その他">その他</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label for="referrer">Alter World Modelsを知った経緯<span class="req">必須</span></label>
+        <select id="referrer" name="referrer" required>
+          <option value="" selected disabled>選択してください</option>
+          <option value="検索でみつけた">検索でみつけた</option>
+          <option value="知人の紹介で知った">知人の紹介で知った</option>
+          <option value="セミナー・イベントで知った">セミナー・イベントで知った</option>
+          <option value="他のウェブサイトで紹介されていた">他のウェブサイトで紹介されていた</option>
+          <option value="AIで知った">AIで知った</option>
+          <option value="その他">その他</option>
+        </select>
       </div>
       <div class="form-row">
         <label for="message">お問い合わせ内容<span class="req">必須</span></label>
         <textarea id="message" name="message" required></textarea>
       </div>
+      <label class="form-check">
+        <input type="checkbox" name="privacy_agree" required>
+        <span><a href="#" class="link-underline">個人情報の取扱いに関する告知文</a>に同意する<span class="req">必須</span></span>
+      </label>
       <button type="submit" class="form-submit">送信する</button>
-      <p class="form-note">※ このフォームはFormspreeと連携予定です。公開前に action属性の「YOUR_FORM_ID」を、実際に取得したFormspreeのフォームIDに差し替えてください。</p>
+      <p class="form-note">※ 個人情報の告知文リンクは、プライバシーポリシーのページ作成後に差し替えてください。</p>
     </form>
   </div>
 </main>
@@ -265,14 +321,14 @@
   <div class="footer-grid">
     <div class="footer-brand">
       <div class="logo">Alter World Models<span>合同会社</span></div>
-      <p>「システム思考」をベースとした共通認識・評価プラットフォームの提供と、それに伴うコンサルティング・トレーニングを行います。</p>
+      <p>「システム思考」をベースとした共通認識・評価プラットフォームの提供と、それに伴うプロフェッショナルサービス・トレーニングを行います。</p>
     </div>
     <ul class="footer-menu">
       <li>
         <span class="cat">サービス</span>
         <ul class="sub">
           <li><a href="service.html#platform">プラットフォーム</a></li>
-          <li><a href="service.html#consulting">コンサルティング</a></li>
+          <li><a href="service.html#consulting">プロフェッショナルサービス</a></li>
           <li><a href="service.html#training">トレーニング／セミナー</a></li>
         </ul>
       </li>
