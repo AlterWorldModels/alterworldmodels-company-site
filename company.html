@@ -32,6 +32,8 @@
   }
   .header-inner{ display:flex; align-items:center; justify-content:space-between; padding:16px 24px; max-width:1080px; margin:0 auto;}
   .logo{ font-family:"Zen Kaku Gothic New", sans-serif; font-weight:700; font-size:1.05rem; color:var(--navy);}
+  .logo-row{display:flex; align-items:center; gap:9px;}
+  .logo-mark{display:block; flex-shrink:0;}
   .logo span{color:var(--blue);}
   nav.main-nav ul{display:flex; gap:30px; list-style:none;}
   nav.main-nav a{ font-size:.92rem; font-weight:500; color:var(--text); padding:6px 2px; border-bottom:2px solid transparent; transition:border-color .2s, color .2s;}
@@ -137,10 +139,6 @@
   .founder-card .name{font-size:1.15rem; font-weight:700; color:var(--navy); margin-bottom:4px;}
   .founder-card .role{font-family:"Inter",sans-serif; font-size:.76rem; color:var(--blue); letter-spacing:.06em; margin-bottom:18px; display:block;}
   .founder-card p{font-size:.92rem; opacity:.85; margin-bottom:14px;}
-  .founder-card h4{font-size:.9rem; color:var(--navy); margin:20px 0 8px;}
-  .career-list{list-style:none; font-size:.84rem; opacity:.8;}
-  .career-list li{padding:4px 0; display:flex; gap:14px;}
-  .career-list time{font-family:"Inter",sans-serif; color:var(--blue); flex-shrink:0; width:90px;}
 
   .info-table{
     width:100%; background:#fff; border-radius:6px; overflow:hidden;
@@ -151,6 +149,10 @@
   .info-table th, .info-table td{ text-align:left; padding:16px 24px; font-size:.9rem;}
   .info-table th{ width:160px; color:var(--blue); font-weight:600; font-family:"Inter",sans-serif; font-size:.78rem; letter-spacing:.04em; background:var(--sky-100); vertical-align:top;}
   .info-table td{color:var(--text); opacity:.9;}
+  .bullet-list{list-style:none;}
+  .bullet-list li{position:relative; padding-left:16px; margin-bottom:8px;}
+  .bullet-list li:last-child{margin-bottom:0;}
+  .bullet-list li::before{content:"•"; position:absolute; left:0; color:var(--blue-light);}
 
   /* contact */
   .contact-wrap{max-width:640px; margin:0 auto; padding:0 24px 100px;}
@@ -206,11 +208,28 @@
 
 <header class="site-header">
   <div class="header-inner">
-    <div class="logo">Alter World Models<span>合同会社</span></div>
+    <div class="logo-row">
+      <svg class="logo-mark" width="17" height="34" viewBox="55 10 90 180" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <clipPath id="bottomClip">
+            <polygon points="55,100 145,100 100,190" />
+          </clipPath>
+        </defs>
+        <polygon points="100,10 55,100 145,100" fill="#ffffff" />
+        <polygon points="55,100 145,100 100,190" fill="#0b2e52" />
+        <g clip-path="url(#bottomClip)">
+          <polygon points="60.4,100 84.655,149.5 99.1,100" fill="#4ab4cf" opacity="0.5" />
+          <polygon points="139.6,100 115.345,149.5 100.9,100" fill="#4ab4cf" opacity="0.5" />
+          <polygon points="82,100 118,100 100,130" fill="#43b4d0" opacity="0.7" />
+        </g>
+        <line x1="81.1" y1="73" x2="118.9" y2="73" stroke="#4be1ec" stroke-width="3" stroke-linecap="round" />
+      </svg>
+      <div class="logo">Alter World Models<span>合同会社</span></div>
+    </div>
     <nav class="main-nav">
       <ul>
         <li><a href="index.html">トップ</a></li>
-        <li><a href="service.html" class="current">サービス</a></li>
+        <li><a href="service.html">サービス</a></li>
         <li><a href="https://note.com/alterworldmodels" target="_blank" rel="noopener">ブログ<svg class="ext-arrow" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 8L8 2M8 2H3M8 2V7" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
         <li><a href="company.html" class="current">会社情報</a></li>
         <li><a href="contact.html">お問い合わせ</a></li>
@@ -244,31 +263,29 @@
       <span class="role">代表社員 / Founder</span>
       <p>地政学リスク・気候変動・技術変化（AI・BioTech・Robotics等）や人口動態の変化など、エコシステムの変化が非線形かつ大きく・頻繁になりつつあります。相互に影響し合う要素が複雑に絡み合うことで、従来の線形的なアプローチでは問題・課題の解決が難しくなっています。</p>
       <p>こうした複雑な問題・課題に対し、関係者が共通認識を持ち、システム全体の挙動をシミュレーションしながら対策を評価・立案できるプラットフォームを提供することで、社会・企業の意思決定の質を高めることを目的として創業しました。</p>
-      <h4>経歴</h4>
-      <ul class="career-list">
-        <li><time>2004.04</time><span>横河情報システムズ株式会社 入社</span></li>
-        <li><time>2007.03</time><span>アクセンチュア株式会社 入社</span></li>
-        <li><time>2010.04</time><span>SAS Institute Japan株式会社 入社</span></li>
-        <li><time>2013.12</time><span>アビームコンサルティング株式会社 入社（マネージャー）</span></li>
-        <li><time>2018.07</time><span>SAS Institute Japan株式会社 入社（本部長・シニアマネージャー）</span></li>
-        <li><time>2026.02</time><span>SAS Institute Japan株式会社 退職、現在に至る</span></li>
-      </ul>
+      <span class="role">経歴</span>
+      <p>システムエンジニアとしてキャリアをスタート後、アクセンチュア株式会社、アビームコンサルティング株式会社でERP/SCMに関する業務・システムコンサルティングに従事。SAS Institute Japan株式会社では主に製造業・小売り、電力・通信などのインフラ業界に対し、データ分析・AI活用による業務改善や組織立上げ・改革のコンサルティングサービス事業に長く携わり、本部長・シニアマネージャーを歴任した後、独立してAlter World Models合同会社を創業。</p>
     </div>
   </section>
+
+  <!--
+    ドラフト（案）です。事実関係・表現ともに堤様のご確認・修正をお願いします。
+  -->
 
   <section class="company-section" id="overview">
     <h2>会社概要</h2>
     <table class="info-table">
       <tr><th>社名</th><td>Alter World Models合同会社</td></tr>
-      <tr><th>設立</th><td>令和8年8月14日</td></tr>
+      <tr><th>設立</th><td>2026年08月25日</td></tr>
       <tr><th>所在地</th><td>東京都新宿区西新宿3丁目3番13号 西新宿水間ビル2F</td></tr>
       <tr><th>代表者</th><td>代表社員　堤 廉</td></tr>
       <tr><th>資本金</th><td>300万円</td></tr>
       <tr><th>事業内容</th><td>
-        コンピュータのソフトウェア及びシミュレーションプラットフォームの企画・研究・開発・設計・製造・販売・保守・リース・賃貸・輸出入<br>
-        経営・事業戦略の立案及び意思決定支援に関するコンサルティング業務<br>
-        企業・組織向けの教育、トレーニング及びセミナーの企画・運営・受託<br>
-        専門家・有識者のネットワークを活用した知見提供及びマッチング支援業務
+        <ul class="bullet-list">
+          <li>コンピュータのソフトウェア及びシミュレーションプラットフォームの企画・研究・開発・設計・製造・販売・保守・リース・賃貸・輸出入</li>
+          <li>経営・事業戦略の立案及び意思決定支援に関するコンサルティング業務</li>
+          <li>企業・組織向けの教育、トレーニング及びセミナーの企画・運営・受託</li>
+        </ul>
       </td></tr>
     </table>
   </section>
@@ -278,14 +295,14 @@
   <div class="footer-grid">
     <div class="footer-brand">
       <div class="logo">Alter World Models<span>合同会社</span></div>
-      <p>「システム思考」をベースとした共通認識・評価プラットフォームの提供と、それに伴うコンサルティング・トレーニングを行います。</p>
+      <p>「システム思考」をベースとした共通認識・評価プラットフォームの提供と、それに伴うプロフェッショナルサービス・トレーニングを行います。</p>
     </div>
     <ul class="footer-menu">
       <li>
         <span class="cat">サービス</span>
         <ul class="sub">
           <li><a href="service.html#platform">プラットフォーム</a></li>
-          <li><a href="service.html#consulting">コンサルティング</a></li>
+          <li><a href="service.html#consulting">プロフェッショナルサービス</a></li>
           <li><a href="service.html#training">トレーニング／セミナー</a></li>
         </ul>
       </li>
@@ -299,8 +316,8 @@
   <div class="footer-bottom">
     <span>&copy; 2026 Alter World Models合同会社　Tokyo, Japan</span>
     <div class="footer-legal">
-      <a href="#">プライバシーポリシー</a>
-      <a href="#">個人情報保護方針</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+      <a href="privacy.html">個人情報保護方針</a>
     </div>
   </div>
 </footer>

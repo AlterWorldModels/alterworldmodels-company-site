@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Alter World Models合同会社｜システム思考で、変化に対応し続ける</title>
-<meta name="description" content="Alter World Models合同会社は「システム思考」をベースとした共通認識・評価プラットフォームの提供とコンサルティング、トレーニングを行います。">
+<meta name="description" content="Alter World Models合同会社は「システム思考」をベースとした共通認識・評価プラットフォームの提供とプロフェッショナルサービス、トレーニングを行います。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&family=Inter:wght@500;600&display=swap" rel="stylesheet">
@@ -43,6 +43,8 @@
     padding:16px 24px; max-width:1080px; margin:0 auto;
   }
   .logo{ font-family:"Zen Kaku Gothic New", sans-serif; font-weight:700; font-size:1.05rem; color:var(--navy);}
+  .logo-row{display:flex; align-items:center; gap:9px;}
+  .logo-mark{display:block; flex-shrink:0;}
   .logo span{color:var(--blue);}
   nav.main-nav ul{display:flex; gap:30px; list-style:none;}
   nav.main-nav a{ font-size:.92rem; font-weight:500; color:var(--text); padding:6px 2px; border-bottom:2px solid transparent; transition:border-color .2s, color .2s;}
@@ -63,6 +65,11 @@
   .hero .eyebrow{display:block; margin-bottom:18px; color:var(--deep-800);}
   .hero h1{ font-size:clamp(1.9rem, 4vw, 2.7rem); font-weight:900; margin-bottom:22px; color:var(--deep-900);}
   .hero p.lead{ font-size:1.02rem; color:var(--deep-800); opacity:.85; max-width:560px; margin:0 auto 36px;}
+  .hero p.tagline{
+    font-size:clamp(1.5rem, 3.2vw, 2.15rem); font-weight:700; color:var(--deep-900);
+    font-family:"Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+    max-width:620px; margin:12px auto 0;
+  }
 
   .waterline{ position:relative; height:64px; margin-top:44px;}
   .waterline::before{
@@ -75,7 +82,22 @@
     color:var(--deep-900); text-transform:uppercase;
   }
 
+  .section-divider{
+    position:relative; max-width:1080px; margin:0 auto; padding:8px 24px 32px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .section-divider::before{
+    content:""; position:absolute; left:24px; right:24px; top:50%; height:1px;
+    background:rgba(255,255,255,.55);
+  }
+  .section-divider .caption{
+    position:relative; background:#fff; padding:5px 18px; border-radius:20px;
+    font-family:"Inter",sans-serif; font-size:.7rem; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--blue); box-shadow:0 4px 14px rgba(8,31,56,.12);
+  }
+
   .cta-row{display:flex; gap:14px; justify-content:center; margin-top:8px;}
+  section.cta-section{padding:0 24px 88px;}
   .btn{ display:inline-block; padding:12px 26px; border-radius:3px; font-size:.92rem; font-weight:500; transition:opacity .2s, transform .15s;}
   .btn:hover{opacity:.85;}
   .btn-primary{background:var(--deep-900); color:#fff;}
@@ -91,7 +113,7 @@
   .summary-card h3{font-size:1.05rem; margin-bottom:10px;}
   .summary-card p{font-size:.88rem; opacity:.8;}
 
-  section.news{padding:0 24px 88px;}
+  section.news{padding:0 24px 8px;}
   .news-inner{
     max-width:760px; margin:0 auto; background:#fff; border-radius:6px;
     padding:32px 36px; box-shadow:0 10px 30px rgba(8,31,56,.12);
@@ -160,13 +182,70 @@
   .blog-card .go.arrow{color:var(--blue); font-weight:600;}
 
   .ext-arrow{display:inline-block; margin-left:5px; vertical-align:1px; opacity:.85;}
+
+  .platform-tag{
+    display:inline-block; margin-top:12px; font-family:"Inter",sans-serif; font-size:.7rem;
+    font-weight:600; color:var(--blue); background:var(--sky-100); padding:4px 10px; border-radius:3px;
+  }
+  .platform-image{
+    width:100%; height:auto; display:block; margin-top:10px;
+    border:1px solid var(--ice-200); border-radius:4px;
+  }
+  .image-caption{
+    display:block; margin-top:6px; font-family:"Inter",sans-serif; font-size:.66rem;
+    color:var(--text); opacity:.5; text-align:right;
+  }
+  .card-sub{list-style:none; margin-top:14px; padding-top:14px; border-top:1px solid var(--ice-200);}
+  .card-sub li{font-size:.8rem; opacity:.75; padding:3px 0;}
+
+  /* use case summary */
+  section.usecases-full{padding:0 24px 8px;}
+  .usecase-full-card{
+    max-width:1080px; margin:0 auto; background:#fff; border-radius:6px;
+    padding:40px 32px 36px; box-shadow:0 10px 30px rgba(8,31,56,.12);
+  }
+  .usecase-full-rows{display:grid; grid-template-columns:1fr 1fr; gap:28px 36px;}
+  .usecase-full-row{display:flex; gap:16px; align-items:flex-start;}
+  .usecase-full-icon{
+    flex-shrink:0; width:52px; height:52px; margin-top:2px;
+    background:var(--surface-deep);
+    clip-path:polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  }
+  .usecase-full-row h4{font-size:.9rem; color:var(--navy); margin-bottom:6px; font-family:"Zen Kaku Gothic New", sans-serif;}
+  .usecase-full-row p{font-size:.82rem; opacity:.78; line-height:1.75;}
+  .usecase-full-hub{
+    margin-top:32px; background:var(--deep-900); color:#fff; border-radius:6px; padding:24px 28px;
+  }
+  .usecase-full-hub h3{color:#fff; font-size:1.05rem; margin-bottom:10px; font-family:"Zen Kaku Gothic New", sans-serif;}
+  .usecase-full-hub p{font-size:.86rem; opacity:.85; line-height:1.8;}
+
+  @media (max-width:760px){
+    .usecase-full-rows{grid-template-columns:1fr;}
+  }
 </style>
 </head>
 <body>
 
 <header class="site-header">
   <div class="header-inner">
-    <div class="logo">Alter World Models<span>合同会社</span></div>
+    <div class="logo-row">
+      <svg class="logo-mark" width="17" height="34" viewBox="55 10 90 180" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <clipPath id="bottomClip">
+            <polygon points="55,100 145,100 100,190" />
+          </clipPath>
+        </defs>
+        <polygon points="100,10 55,100 145,100" fill="#ffffff" />
+        <polygon points="55,100 145,100 100,190" fill="#0b2e52" />
+        <g clip-path="url(#bottomClip)">
+          <polygon points="60.4,100 84.655,149.5 99.1,100" fill="#4ab4cf" opacity="0.5" />
+          <polygon points="139.6,100 115.345,149.5 100.9,100" fill="#4ab4cf" opacity="0.5" />
+          <polygon points="82,100 118,100 100,130" fill="#43b4d0" opacity="0.7" />
+        </g>
+        <line x1="81.1" y1="73" x2="118.9" y2="73" stroke="#4be1ec" stroke-width="3" stroke-linecap="round" />
+      </svg>
+      <div class="logo">Alter World Models<span>合同会社</span></div>
+    </div>
     <nav class="main-nav">
       <ul>
         <li><a href="index.html" class="current">トップ</a></li>
@@ -186,32 +265,87 @@
   <section class="hero">
     <div class="hero-inner">
       <span class="eyebrow">Systems Thinking Platform</span>
-      <h1>見えている問題の下には、<br>まだ言葉になっていない構造がある。</h1>
-      <p class="lead">複雑化・非線形化するエコシステムの変化に対し、社会・企業・政府が適切に対応し続けられる世界の実現に貢献します。「システム思考」をベースとした共通認識・評価プラットフォームを提供します。</p>
-      <div class="cta-row">
-        <a href="service.html" class="btn btn-primary">サービスを見る</a>
-        <a href="contact.html" class="btn btn-ghost">お問い合わせ</a>
-      </div>
+      <h1>「システム思考」をベースとした<br>共通認識・評価プラットフォームを提供します。</h1>
+      <p class="lead">複雑化・非線形化する地政学リスク・気候変動・技術変化（AI・BioTech・Robotics等）や人口動態の変化に対し、社会・政府・企業が適切に対応し続けられる世界の実現に貢献します。</p>
+      <p class="tagline">見えている問題の下には、まだ言葉になっていない構造がある。</p>
       <div class="waterline"><span class="caption">Visible / Hidden</span></div>
     </div>
   </section>
 
+  <section class="usecases-full">
+    <div class="usecase-full-card">
+      <span class="eyebrow" style="display:block; text-align:center; margin-bottom:20px;">Use Case Summary</span>
+      <div class="usecase-full-rows">
+        <div class="usecase-full-row">
+          <div class="usecase-full-icon"></div>
+          <div>
+            <h4>SCM ボトルネック・リスクシミュレーション</h4>
+            <p>地政学リスク等で多段階サプライチェーンのどこがボトルネックになりそうか感度分析によりリスクを分析し、見通しや対策箇所を特定します。</p>
+          </div>
+        </div>
+        <div class="usecase-full-row">
+          <div class="usecase-full-icon"></div>
+          <div>
+            <h4>オペレーション ボトルネック・リスクシミュレーション</h4>
+            <p>コロナ化の医療のような広域なオペレーションのどこがボトルネックになりそうか感度分析によりリスクを分析し、見通しや対策箇所を特定します。</p>
+          </div>
+        </div>
+        <div class="usecase-full-row">
+          <div class="usecase-full-icon"></div>
+          <div>
+            <h4>シナリオプランニング実行連動</h4>
+            <p>複数のシナリオで前提が変化し続けるとき、今の実績データが複数シナリオのどれに近づいているか継続的に判定し、シナリオに対応する業務ルール・システムに切り替えます。</p>
+          </div>
+        </div>
+        <div class="usecase-full-row">
+          <div class="usecase-full-icon"></div>
+          <div>
+            <h4>効果・リスク評価指標 共同投資</h4>
+            <p>単独の企業では抱えきれない広範な課題で、複数の当事者でリスクを共同引受・共同積立するか定量的に合意するためにソーシャルインパクトなどの指標を定義し、その遷移を評価します。</p>
+          </div>
+        </div>
+      </div>
+      <div class="usecase-full-hub">
+        <h3>システム思考モデリングの民主化</h3>
+        <p>複数の関係者の頭の中にある要素間の関係を、手書き図や発言から生成AIを活用しモデルのドラフトを作成します。また生成AIを活用し要素間の関係のチェックや関係定義のデータ・関係式、当該領域の専門家などの情報提示をして対話的にモデルを改善します。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"><span class="caption">Service</span></div>
+
   <section class="summary">
     <div class="summary-grid">
       <div class="summary-card">
-        <span class="num">01</span>
+        <span class="num">Platform</span>
         <h3>システム思考プラットフォーム</h3>
-        <p>要素間の関係をモデル化し、関係者間で共通認識を持てる評価基盤を提供します。</p>
+        <p>Vensim®ベースのシミュレーションで、モデル化からシナリオ評価・アクション連携までを一貫して支援します。</p>
+        <span class="platform-tag">Vensim®によるモデリング図</span>
+        <img src="assets/vensim-diagram.png" alt="Vensim®によるシステム思考モデリング図の例" class="platform-image">
+        <span class="image-caption">出典：Vensim®</span>
+        <ul class="card-sub">
+          <li>①システム思考モデリング アクセラレーター</li>
+          <li>②ボトルネック・リスクシミュレーション</li>
+          <li>③シナリオ シミュレーション・適合度評価</li>
+        </ul>
       </div>
       <div class="summary-card">
-        <span class="num">02</span>
-        <h3>コンサルティング</h3>
-        <p>経営・政策の意思決定を、システム全体の挙動シミュレーションで支援します。</p>
+        <span class="num">Professional Service</span>
+        <h3>プロフェッショナルサービス</h3>
+        <p>システム全体の定量評価に基づく意思決定・リスク管理と、プラットフォームの機能拡張を支援します。</p>
+        <ul class="card-sub">
+          <li>①システム思考 モデリング支援</li>
+          <li>②リスク・シナリオ分析支援</li>
+          <li>③生成AI連携 インテグレーション支援</li>
+        </ul>
       </div>
       <div class="summary-card">
-        <span class="num">03</span>
+        <span class="num">Training/Seminar</span>
         <h3>トレーニング／セミナー</h3>
         <p>「システム思考」の考え方と実践手法を、組織内に定着させる研修を行います。</p>
+        <ul class="card-sub">
+          <li>①システム思考 モデリング トレーニング</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -222,20 +356,27 @@
       <p class="news-empty">現在準備中です。会社設立・サービス開始に関する情報は、こちらに順次掲載します。</p>
     </div>
   </section>
+
+  <section class="cta-section">
+    <div class="cta-row">
+      <a href="service.html" class="btn btn-primary">サービスを見る</a>
+      <a href="contact.html" class="btn btn-ghost">お問い合わせ</a>
+    </div>
+  </section>
 </main>
 
 <footer id="footer">
   <div class="footer-grid">
     <div class="footer-brand">
       <div class="logo">Alter World Models<span>合同会社</span></div>
-      <p>「システム思考」をベースとした共通認識・評価プラットフォームの提供と、それに伴うコンサルティング・トレーニングを行います。</p>
+      <p>「システム思考」をベースとした共通認識・評価プラットフォームの提供と、それに伴うプロフェッショナルサービス・トレーニングを行います。</p>
     </div>
     <ul class="footer-menu">
       <li>
         <span class="cat">サービス</span>
         <ul class="sub">
           <li><a href="service.html#platform">プラットフォーム</a></li>
-          <li><a href="service.html#consulting">コンサルティング</a></li>
+          <li><a href="service.html#consulting">プロフェッショナルサービス</a></li>
           <li><a href="service.html#training">トレーニング／セミナー</a></li>
         </ul>
       </li>
@@ -249,8 +390,8 @@
   <div class="footer-bottom">
     <span>&copy; 2026 Alter World Models合同会社　Tokyo, Japan</span>
     <div class="footer-legal">
-      <a href="#">プライバシーポリシー</a>
-      <a href="#">個人情報保護方針</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+      <a href="privacy.html">個人情報保護方針</a>
     </div>
   </div>
 </footer>
